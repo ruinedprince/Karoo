@@ -1,0 +1,58 @@
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 70vh;
+    grid-gap: 10vh;
+    align-items: center;
+    text-align: center;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    place-items: center;
+    display: grid;
+    background-color: lightyellow;
+    font-family: sans-serif;
+}
+
+img{
+    width: 100%;
+}
+
+.card{
+    width: 30vw;
+    position: relative;
+}
+
+.title{
+    inset: 0;
+    position: absolute;
+    transform: translate3d(0%, 70%, 0);
+}
+
+.inner img{
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    border-radius: 25px;
+    background-position: top;
+}
+
+.card:hover .inner img{
+    transform: perspective(900px)
+    translateY(-5%)
+    rotateX(25deg)
+    translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    filter: blur(0.8px);
+}
+
+.card:hover .title{
+    transform: translate3d(0%, 30%, 0);
+}
+
+.inner img, .title{
+    transition: all 1s;
+}
+
